@@ -1,0 +1,47 @@
+body {
+    /* Ton arrière-plan rose et papillons */
+    background: linear-gradient(180deg, #ffcce6, #fce8f3);
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#terminal {
+    background-color: rgba(255, 255, 255, 0.8); /* Fond blanc semi-transparent */
+    padding: 30px;
+    border-radius: 15px;
+    color: #881337;
+    width: 80%;
+    max-width: 500px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    z-index: 10;
+}
+
+#output { white-space: pre-wrap; font-size: 1.2rem; }
+
+.final-love {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    color: #ff0055;
+    margin-top: 20px;
+    animation: pulse 1s infinite alternate;
+}
+
+@keyframes pulse { from { transform: scale(1); } to { transform: scale(1.1); } }
+
+/* Emojis flottants (réutilisés du jeu) */
+.emoji-floating {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    pointer-events: none;
+    animation: float 10s linear infinite;
+    z-index: 1;
+}
+
+@keyframes float { from { transform: translateY(100vh); } to { transform: translateY(-100px); } }
