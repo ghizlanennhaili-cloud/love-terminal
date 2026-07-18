@@ -1,20 +1,19 @@
 document.addEventListener("DOMContentLoaded", async () => {
     const output = document.getElementById('output');
     
-    // 1. Loading de 0% à 100%
-    output.innerHTML = `<img id="loader-img" src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHJqbmVqZzZqbmVqZzZqbmVqZzZqbmVqZzZqbmVqZzZqbmVqJmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/3o7TKMGpxxHOGTdzJC/giphy.gif">
+    // 1. Affichage du cercle et du pourcentage
+    output.innerHTML = `<div class="loader-spinner"></div>
                         <div id="percent">0%</div>`;
     
     for (let i = 0; i <= 100; i++) {
         document.getElementById('percent').innerText = i + "%";
-        await new Promise(r => setTimeout(r, 100)); // 10 secondes au total pour 0-100%
+        await new Promise(r => setTimeout(r, 100));
     }
 
-    output.innerHTML = ""; // Nettoyer l'écran
+    output.innerHTML = ""; // Nettoyer l'écran après chargement
 
-    // 2. Séquence des messages avec délais de 4 secondes
+    // 2. Séquence des messages
     const sleep = (ms) => new Promise(r => setTimeout(r, ms));
-
     const write = (text) => { output.innerText += text + "\n"; };
 
     write("> Searching for the best husband...");
@@ -23,7 +22,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     write("Result found.");
     await sleep(4000);
 
-    write("\nName: [Simo]");
+    write("\nName: Simo");
     await sleep(4000);
 
     write("Status: The love of Youssra ❤️");
