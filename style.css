@@ -1,7 +1,14 @@
+/* Nettoyage global pour supprimer toute marge par défaut */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     background: linear-gradient(180deg, #ffcce6, #fce8f3);
     height: 100vh;
-    margin: 0;
+    width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11,33 +18,28 @@ body {
 }
 
 #terminal {
-    width: 100%; /* On prend un peu plus de largeur sur téléphone */
-    max-width: 500px;
+    width: 100vw;       /* Force la largeur totale */
     height: 85vh;
-    overflow-y: auto;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box; /* Force le calcul des tailles bord à bord */
+    overflow-y: auto;   /* Scroll interne */
+    padding: 0 10px;    /* Petit espace pour ne pas coller les bords */
     text-align: center;
-    max-height: 85vh;
 }
 
 #output { 
     white-space: pre-wrap; 
-    font-size: 2rem; /* Taille un peu plus grande pour la lisibilité */
-    line-height: 1.8;  /* Espacement confortable */
+    font-size: 1.5rem;  /* Lisible sur mobile */
+    line-height: 1.5;
     text-align: center;
-    word-break: break-word; /* Empêche les mots longs de dépasser de l'écran */
-    margin: 0;         /* Supprime toute marge extérieure */
-    padding: 0;
+    word-break: break-word;
+    margin: 0 auto;
 }
 
 #progress-container {
-    width: 100%;
+    width: 90%;         /* Un peu moins que 100% pour que la barre soit propre */
     background-color: #f3e5f5;
     border-radius: 15px;
     padding: 3px;
-    margin: 20px auto 10px auto; /* 10px en bas pour l'espace avec le % */
+    margin: 20px auto;
 }
 
 #progress-bar {
@@ -52,18 +54,16 @@ body {
     font-size: 1.5rem;
     font-weight: bold;
     color: #881337;
-    text-align: center; /* Centré sous la barre */
     margin-top: 5px;
 }
 
 .final-love {
-    font-size: 6rem; /* Ajusté pour ne pas être trop gros sur petit écran */
+    font-size: 2.5rem; /* Réduit un peu pour éviter les coupures de mots */
     font-weight: bold;
-    text-align: center;
     color: #ff0055;
     margin-top: 20px;
     animation: pulse 1s infinite alternate;
-    white-space: nowrap; /* Maintient les phrases clés sur une seule ligne */
+    white-space: normal; /* Autorise le retour à la ligne si nécessaire */
 }
 
 @keyframes pulse { from { transform: scale(1); } to { transform: scale(1.1); } }
