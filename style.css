@@ -12,10 +12,12 @@ body {
 
 #terminal {
     width: 100%; /* On prend un peu plus de largeur sur téléphone */
-
+    max-width: 500px;
     height: 85vh;
     overflow-y: auto;
-    padding: 0 2px; /* Réduit le padding pour gagner de la place */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Force le calcul des tailles bord à bord */
     text-align: center;
     max-height: 85vh;
 }
