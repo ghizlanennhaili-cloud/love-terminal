@@ -1,44 +1,87 @@
 document.addEventListener("DOMContentLoaded", async () => {
     const output = document.getElementById('output');
     
-    // 1. Structure : Barre en haut, Pourcentage en dessous
+    // 1. Loader (Barre + Pourcentage)
     output.innerHTML = `
-        <div id="progress-container">
-            <div id="progress-bar"></div>
-        </div>
+        <div id="progress-container"><div id="progress-bar"></div></div>
         <div id="percent">0%</div>
     `;
     
     const progressBar = document.getElementById('progress-bar');
     const percentText = document.getElementById('percent');
 
-    // 2. Incrémentation
     for (let i = 0; i <= 100; i++) {
         progressBar.style.width = i + "%";
-        percentText.innerText = i + "%"; 
-        await new Promise(r => setTimeout(r, 100)); 
+        percentText.innerText = i + "%";
+        await new Promise(r => setTimeout(r, 50)); // Accéléré un peu pour la longueur du texte
     }
 
-    await new Promise(r => setTimeout(r, 500)); 
     output.innerHTML = ""; 
 
-    // 3. Séquence des messages
+    // 2. Séquence du nouveau texte
     const sleep = (ms) => new Promise(r => setTimeout(r, ms));
     const write = (text) => { output.innerText += text + "\n"; };
 
-    write("> Searching for the best husband...");
-    await sleep(4000);
-    write("Result found.");
-    await sleep(4000);
-    write("\nName: Simo");
-    await sleep(4000);
-    write("Status: The love of Youssra ❤️");
-    await sleep(4000);
-    write("\nMission:");
-    write("Take care of your wife forever.");
+    write("> Initializing Love System...\n");
+    await sleep(1000);
+    write("Loading memories... 100%\n");
+    await sleep(1000);
+    write("Searching for the man who owns Youssra's heart...\n");
+    await sleep(1000);
+    write("Result found.\n");
+    await sleep(1000);
+
+    write("\nName    : Simo");
+    write("Role    : Husband ❤️\n");
+    await sleep(1000);
+
+    write("Achievements unlocked:");
+    await sleep(500);
+    write("✔️ Occasionally tests Youssra's patience...");
+    await sleep(500);
+    write("✔️ He knows exactly how to make Youssra smile, and somehow, he also knows exactly how to make her mad 😒");
+    await sleep(500);
+    write("✔️ Sometimes makes Youssra upset...");
+    await sleep(1500);
+    write("\n   Just kidding 😈❤️\n");
+    await sleep(500);
+
+    write("✔ Stole Youssra's heart.");
+    await sleep(500);
+    write("✔ Became her best friend.");
+    await sleep(500);
+    write("✔ Became her safe place.");
+    await sleep(500);
+    write("✔ Became her husband.");
+    await sleep(500);
+    write("✔ Made her believe in forever.\n");
+    await sleep(1000);
+
+    write("Current mission:");
+    await sleep(500);
+    write("Love Youssra.");
+    await sleep(500);
+    write("Protect Youssra.");
+    await sleep(500);
+    write("Support Youssra.");
+    await sleep(500);
+    write("Make Youssra smile.");
+    await sleep(500);
+    write("Grow old with Youssra.\n");
+    await sleep(1000);
+
+    write("Mission duration:");
+    write("∞ Forever\n");
+    await sleep(1000);
+
+    write("No matter how many kilometers separate us,");
+    write("my heart will always choose you.\n");
+    await sleep(1000);
+
+    write("Happy First Wedding Anniversary, my love.\n");
     
     const love = document.createElement('div');
     love.className = 'final-love';
-    love.innerText = "I LOVE YOU 💖";
+    love.innerHTML = "❤️ PROPERTY OF YOUSSRA ❤️<br>I LOVE YOU, MY HUSBAND.";
     output.appendChild(love);
 });
