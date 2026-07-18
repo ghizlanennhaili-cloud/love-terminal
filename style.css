@@ -56,18 +56,3 @@ body {
 }
 
 @keyframes pulse { from { transform: scale(1); } to { transform: scale(1.1); } }
-#terminal {
-    width: 90%;          /* Un peu plus large pour les mobiles */
-    max-width: 600px;
-    text-align: center;
-    max-height: 90vh;    /* Limite la hauteur du terminal à 90% de l'écran */
-    overflow-y: auto;    /* Permet le défilement vertical si le texte est long */
-    padding: 20px;
-}
-
-#output { 
-    white-space: pre-wrap; 
-    font-size: 1rem;     /* Taille légèrement réduite pour mieux voir le texte */
-    text-align: center;
-    line-height: 1.5;    /* Ajoute un peu d'espace entre les lignes */
-}
