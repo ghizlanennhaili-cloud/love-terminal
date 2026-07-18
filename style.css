@@ -6,28 +6,36 @@ body {
     justify-content: center;
     align-items: center;
     font-family: 'Courier New', Courier, monospace;
+    overflow: hidden;
 }
 
 #terminal {
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: transparent; /* Fond supprimé */
     padding: 30px;
-    border-radius: 15px;
+    color: #881337;
     width: 80%;
     max-width: 500px;
-    min-height: 200px; /* Assure que le cadre est visible même vide */
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
     z-index: 10;
 }
 
 #output { 
     white-space: pre-wrap; 
     font-size: 1.2rem; 
-    color: #881337; /* Couleur bien visible */
     margin: 0;
 }
 
-.final-love {
+/* Style du loading */
+#loader {
     font-size: 2rem;
+    font-weight: bold;
+    color: #881337;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink { 50% { opacity: 0; } }
+
+.final-love {
+    font-size: 2.5rem;
     font-weight: bold;
     text-align: center;
     color: #ff0055;
