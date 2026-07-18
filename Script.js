@@ -1,43 +1,39 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
     const output = document.getElementById('output');
     
-    // Étape 1 : Afficher le loader pendant 15 secondes
-    output.innerHTML = '<div id="loader">Loading memories... 15s</div>';
+    // 1. Loading de 0% à 100%
+    output.innerHTML = `<img id="loader-img" src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHJqbmVqZzZqbmVqZzZqbmVqZzZqbmVqZzZqbmVqZzZqbmVqJmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/3o7TKMGpxxHOGTdzJC/giphy.gif">
+                        <div id="percent">0%</div>`;
     
-    setTimeout(() => {
-        output.innerHTML = ""; // Efface le loader
-        startTerminal();
-    }, 15000); // 15000ms = 15 secondes
-
-    // Étape 2 : Le terminal
-    function startTerminal() {
-        const lines = [
-            "Initializing...", 
-            "100%",
-            "",
-            "> Searching for the best husband...",
-            "Result found.",
-            "",
-            "Name: [Son Prénom]",
-            "Status: The love of Youssra ❤️",
-            "",
-            "Mission:",
-            "Take care of your wife forever."
-        ];
-
-        let i = 0;
-        function typeWriter() {
-            if (i < lines.length) {
-                output.innerText += lines[i] + "\n";
-                i++;
-                setTimeout(typeWriter, 800);
-            } else {
-                const love = document.createElement('div');
-                love.className = 'final-love';
-                love.innerText = "I LOVE YOU 💖";
-                output.appendChild(love);
-            }
-        }
-        typeWriter();
+    for (let i = 0; i <= 100; i++) {
+        document.getElementById('percent').innerText = i + "%";
+        await new Promise(r => setTimeout(r, 100)); // 10 secondes au total pour 0-100%
     }
+
+    output.innerHTML = ""; // Nettoyer l'écran
+
+    // 2. Séquence des messages avec délais de 4 secondes
+    const sleep = (ms) => new Promise(r => setTimeout(r, ms));
+
+    const write = (text) => { output.innerText += text + "\n"; };
+
+    write("> Searching for the best husband...");
+    await sleep(4000);
+
+    write("Result found.");
+    await sleep(4000);
+
+    write("\nName: [Simo]");
+    await sleep(4000);
+
+    write("Status: The love of Youssra ❤️");
+    await sleep(4000);
+
+    write("\nMission:");
+    write("Take care of your wife forever.");
+    
+    const love = document.createElement('div');
+    love.className = 'final-love';
+    love.innerText = "I LOVE YOU 💖";
+    output.appendChild(love);
 });
