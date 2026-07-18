@@ -1,28 +1,28 @@
 document.addEventListener("DOMContentLoaded", async () => {
     const output = document.getElementById('output');
     
-    // 1. Affichage du conteneur de la barre de progression
+    // 1. Structure : Barre en haut, Pourcentage en dessous
     output.innerHTML = `
         <div id="progress-container">
-            <div id="progress-bar">0%</div>
+            <div id="progress-bar"></div>
         </div>
+        <div id="percent">0%</div>
     `;
     
     const progressBar = document.getElementById('progress-bar');
+    const percentText = document.getElementById('percent');
 
-    // 2. Incrémentation de 0% à 100% de la barre
+    // 2. Incrémentation
     for (let i = 0; i <= 100; i++) {
-        progressBar.style.width = i + "%"; // Change la largeur visuelle
-        progressBar.innerText = i + "%";   // Change le texte à l'intérieur
-        await new Promise(r => setTimeout(r, 100)); // Total de 10 secondes
+        progressBar.style.width = i + "%";
+        percentText.innerText = i + "%"; 
+        await new Promise(r => setTimeout(r, 100)); 
     }
 
-    // Petite pause pour que l'utilisateur voie bien les 100%
     await new Promise(r => setTimeout(r, 500)); 
+    output.innerHTML = ""; 
 
-    output.innerHTML = ""; // Nettoyer l'écran
-
-    // 3. Séquence des messages (inchangée)
+    // 3. Séquence des messages
     const sleep = (ms) => new Promise(r => setTimeout(r, ms));
     const write = (text) => { output.innerText += text + "\n"; };
 

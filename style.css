@@ -19,32 +19,32 @@ body {
 #output { 
     white-space: pre-wrap; 
     font-size: 1.2rem; 
-    text-align: left;
+    text-align: center; /* Texte centré */
 }
 
-/* --- Styles de la barre de progression --- */
 #progress-container {
     width: 100%;
-    background-color: #f3e5f5; /* Fond très clair de la barre */
+    background-color: #f3e5f5;
     border-radius: 15px;
     padding: 3px;
-    box-shadow: inset 0 1px 3px rgba(0,0,0,0.2);
-    margin: 20px auto;
-    box-sizing: border-box;
+    margin: 20px auto 10px auto; /* 10px en bas pour l'espace avec le % */
 }
 
 #progress-bar {
-    width: 0%; /* Commence à 0% */
+    width: 0%;
     height: 25px;
-    background: linear-gradient(90deg, #ff99cc, #ff66b2); /* Dégradé rose */
+    background: linear-gradient(90deg, #ff99cc, #ff66b2);
     border-radius: 12px;
-    text-align: center;
-    line-height: 25px;
-    color: white;
-    font-weight: bold;
-    transition: width 0.1s linear; /* Animation fluide */
+    transition: width 0.1s linear;
 }
-/* ---------------------------------------- */
+
+#percent {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #881337;
+    text-align: center; /* Centré sous la barre */
+    margin-top: 5px;
+}
 
 .final-love {
     font-size: 2.5rem;
