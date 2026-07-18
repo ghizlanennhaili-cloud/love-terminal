@@ -11,7 +11,7 @@ body {
 }
 
 #terminal {
-    width: 95%; /* On prend un peu plus de largeur sur téléphone */
+    width: 100%; /* On prend un peu plus de largeur sur téléphone */
     max-width: 500px;
     height: 85vh;
     overflow-y: auto;
@@ -22,8 +22,8 @@ body {
 
 #output { 
     white-space: pre-wrap; 
-    font-size: 1.1rem; /* Taille un peu plus grande pour la lisibilité */
-    line-height: 1.6;  /* Espacement confortable */
+    font-size: 1.4rem; /* Taille un peu plus grande pour la lisibilité */
+    line-height: 1.8;  /* Espacement confortable */
     text-align: center;
     word-break: break-word; /* Empêche les mots longs de dépasser de l'écran */
 }
