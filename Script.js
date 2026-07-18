@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     await sleep(1000);
     write("✔️ Sometimes makes Youssra upset...");
     await sleep(3000);
-    write("<br>   Just kidding 😈❤️<br>");
+    write("<br>   Just kidding 😈❤️<br></strong>");
     await sleep(2000);
 
     write("✔️ Stole Youssra's heart.");
