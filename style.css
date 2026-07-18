@@ -22,27 +22,29 @@ body {
     text-align: left;
 }
 
-/* Ajout de la définition du loader-spinner */
-.loader-spinner {
-    border: 8px solid #f3f3f3;
-    border-top: 8px solid #ff6b6b;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    animation: spin 1s linear infinite;
+/* --- Styles de la barre de progression --- */
+#progress-container {
+    width: 100%;
+    background-color: #f3e5f5; /* Fond très clair de la barre */
+    border-radius: 15px;
+    padding: 3px;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.2);
     margin: 20px auto;
+    box-sizing: border-box;
 }
 
-@keyframes spin { 
-    0% { transform: rotate(0deg); } 
-    100% { transform: rotate(360deg); } 
+#progress-bar {
+    width: 0%; /* Commence à 0% */
+    height: 25px;
+    background: linear-gradient(90deg, #ff99cc, #ff66b2); /* Dégradé rose */
+    border-radius: 12px;
+    text-align: center;
+    line-height: 25px;
+    color: white;
+    font-weight: bold;
+    transition: width 0.1s linear; /* Animation fluide */
 }
-
-#percent { 
-    font-size: 1.5rem; 
-    font-weight: bold; 
-    margin-top: 10px;
-}
+/* ---------------------------------------- */
 
 .final-love {
     font-size: 2.5rem;
@@ -53,7 +55,4 @@ body {
     animation: pulse 1s infinite alternate;
 }
 
-@keyframes pulse { 
-    from { transform: scale(1); } 
-    to { transform: scale(1.1); } 
-}
+@keyframes pulse { from { transform: scale(1); } to { transform: scale(1.1); } }
