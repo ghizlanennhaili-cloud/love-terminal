@@ -15,7 +15,12 @@ document.addEventListener("DOMContentLoaded", async () => {
         percentText.innerText = i + "%";
         await new Promise(r => setTimeout(r, 50)); // Accéléré un peu pour la longueur du texte
     }
-
+const write = (text) => { 
+    output.innerText += text + "\n"; 
+    // Fait défiler le terminal vers le bas automatiquement
+    const terminal = document.getElementById('terminal');
+    terminal.scrollTop = terminal.scrollHeight;
+};
     output.innerHTML = ""; 
 
     // 2. Séquence du nouveau texte
